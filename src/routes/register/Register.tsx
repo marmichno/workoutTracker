@@ -1,7 +1,12 @@
+// styled
+import { StyledRegisterContainer } from './StyledRegister';
+// components
+import { RegisterForm } from './registerForm/RegisterForm';
+
 export const Register = () => {
   return (
-    <div>
-      <h1>Register Page</h1>
-    </div>
+    <StyledRegisterContainer>
+      <RegisterForm />
+    </StyledRegisterContainer>
   );
 };
