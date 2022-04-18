@@ -1,3 +1,4 @@
-export const paths = <const> {
-    register: '/register'
-}
+export const paths = <const>{
+  register: "/register",
+  login: "/login",
+};

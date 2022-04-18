@@ -3,7 +3,7 @@ import styled from "styled-components";
 // mui
 import { Paper } from "@mui/material";
 
-export const StyledRegisterFormContainer = styled(Paper)`
+export const StyledLoginFormContainer = styled(Paper)`
   && {
     width: 30vw;
     height: 80vh;
@@ -15,7 +15,7 @@ export const StyledRegisterFormContainer = styled(Paper)`
   }
 `;
 
-export const StyledRegisterImageWrapper = styled("div")`
+export const StyledLoginImageWrapper = styled("div")`
   && {
     height: 20%;
     width: 100%;
@@ -29,7 +29,7 @@ export const StyledRegisterImageWrapper = styled("div")`
   }
 `;
 
-export const StyledRegisterHeaderWrapper = styled("div")`
+export const StyledLoginHeaderWrapper = styled("div")`
   && {
     width: 100%;
     display: flex;
@@ -43,7 +43,7 @@ export const StyledRegisterHeaderWrapper = styled("div")`
   }
 `;
 
-export const StyledRegisterFormWrapper = styled("div")`
+export const StyledLoginFormWrapper = styled("div")`
   width: 100%;
   display: flex;
   align-items: center;
@@ -64,13 +64,13 @@ export const StyledRegisterFormWrapper = styled("div")`
   }
 `;
 
-export const StyledRegisterFormInputWrapper = styled("div")`
+export const StyledLoginFormInputWrapper = styled("div")`
   width: 100%;
   padding-bottom: 0.7em;
   padding-top: 0.7em;
 `;
 
-export const StyledRegisterCaptionWrapper = styled("div")`
+export const StyledLoginCaptionWrapper = styled("div")`
   width: 100%;
   display: flex;
   align-items: center;

@@ -6,22 +6,22 @@ import {
   StyledRegisterFormWrapper,
   StyledRegisterFormInputWrapper,
   StyledRegisterCaptionWrapper,
-} from './StyledRegisterForm';
+} from "./StyledRegisterForm";
 // mui
-import { Typography } from '@mui/material';
-import { Button } from '@mui/material';
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 // inputs
-import { RegisterEmailInput } from './registerInputs/registerEmailInput/RegisterEmailInput';
-import { RegisterNicknameInput } from './registerInputs/registerNicknameInput/RegisterNicknameInput';
-import { RegisterPasswordInput } from './registerInputs/registerPasswordInput/RegisterPasswordInput';
-import { RegisterPasswordRepeatInput } from './registerInputs/registerPasswordRepeatInput/RegisterPasswordRepeatInput';
+import { RegisterEmailInput } from "./registerInputs/registerEmailInput/RegisterEmailInput";
+import { RegisterNicknameInput } from "./registerInputs/registerNicknameInput/RegisterNicknameInput";
+import { RegisterPasswordInput } from "./registerInputs/registerPasswordInput/RegisterPasswordInput";
+import { RegisterPasswordRepeatInput } from "./registerInputs/registerPasswordRepeatInput/RegisterPasswordRepeatInput";
 // react-hook-form
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 // validation schema
-import { registerValidationSchema } from './registerValidationSchema/registerValidationSchma';
+import { registerValidationSchema } from "./registerValidationSchema/registerValidationSchma";
 // requests
-import { postNewUser } from './registerForm.requests';
+import { postNewUser } from "./registerForm.requests";
 
 interface RegisterFormInput {
   email: string;
