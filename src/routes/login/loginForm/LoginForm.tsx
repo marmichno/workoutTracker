@@ -6,19 +6,20 @@ import {
   StyledLoginFormWrapper,
   StyledLoginFormInputWrapper,
   StyledLoginCaptionWrapper,
-} from "./StyledLoginForm";
+} from './StyledLoginForm';
 // mui
-import { Typography } from "@mui/material";
-import { Button } from "@mui/material";
+import { Typography } from '@mui/material';
+import { Button } from '@mui/material';
 // inputs
-import { LoginEmailInput } from "./loginInputs/loginEmailInput/LoginEmailInput";
-import { LoginPasswordInput } from "./loginInputs/loginPasswordInput/LoginPasswordInput";
+import { LoginEmailInput } from './loginInputs/loginEmailInput/LoginEmailInput';
+import { LoginPasswordInput } from './loginInputs/loginPasswordInput/LoginPasswordInput';
 // react-hook-form
-import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 // validation schema
-import { loginValidationSchema } from "./loginValidationSchema/loginValidationSchema";
+import { loginValidationSchema } from './loginValidationSchema/loginValidationSchema';
 // requests
+import { postLoginUser } from './loginForm.requests';
 
 interface LoginFormInput {
   email: string;
@@ -31,7 +32,7 @@ export const LoginForm = () => {
   });
 
   const loginSubmitHandler: SubmitHandler<LoginFormInput> = async (data) => {
-    console.log(data);
+    await postLoginUser(data);
   };
 
   return (
