@@ -1,3 +1,5 @@
+// default css
+import './index.css';
 // config
 import { paths } from './config/paths';
 // router
@@ -10,6 +12,7 @@ import { ProtectedRoutes } from './routes/defaultRoutes/protectedRoutes/Protecte
 import { Register } from './routes/register/Register';
 import { Login } from './routes/login/Login';
 import { UserDashboard } from './routes/userDashboard/UserDashboard';
+import { ExercisesMgt } from './routes/exercisesMgt/ExercisesMgt';
 
 const App = () => {
   return (
@@ -20,6 +23,7 @@ const App = () => {
         <Route path={paths.login} element={<Login />} />
         <Route element={<ProtectedRoutes />}>
           <Route path={paths.dashboard} element={<UserDashboard />} />
+          <Route path={paths.exercisesMgt} element={<ExercisesMgt />} />
         </Route>
       </Routes>
     </Router>

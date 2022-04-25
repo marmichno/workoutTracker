@@ -11,7 +11,7 @@ const session = getSessionCookie();
 const axiosInstance = axios.create({
     baseURL,
     headers: {
-        Authorization: `Bearer ${session ? session.token : ''}`
+        Authorization: `Bearer ${getSessionCookie().token}`
     }
 });
 
@@ -24,19 +24,21 @@ const updateToken = async () => {
     }
 
     const body = {
-        "token": `${session ? session.refreshToken : ''}`,
+        "token": `${getSessionCookie().refreshToken}`,
     }
 
     try {
         const response = await axios.post(`${baseURL}/authorization/refreshToken`, JSON.stringify(body), config);
-        return response.data
+        document.cookie = "workoutTrackerAppSession="
+        document.cookie = `workoutTrackerAppSession=${JSON.stringify(response.data)}`
+        return response.data;
     } catch (error) {
         localStorage.removeItem("token");
     }
 }
 
 axiosInstance.interceptors.request.use(async req => {
-    req.headers!.Authorization = `Bearer ${session ? session.token : ''}`;
+    req.headers!.Authorization = `Bearer ${getSessionCookie().token}`;
     return req;
 })
 
@@ -50,8 +52,7 @@ axiosInstance.interceptors.response.use(
             if (!isRefreshing) {
                 isRefreshing = true;
                 return updateToken().then(newTokens => {
-                    document.cookie = `workoutTrackerAppSession=${newTokens}`
-                    config.headers['Authorization'] = session ? session.token : '';
+                    config.headers['Authorization'] = getSessionCookie().token;
                     // when token is fetched call all queued requests
                     requests.forEach(cb => cb());
                     requests = [];
