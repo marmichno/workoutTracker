@@ -16,10 +16,8 @@ export const StyledExerciseTableContainer = styled(TableContainer)`
   && {
     height: 80%;
     width: 100%;
-    position: relative;
     margin-top: 10px;
     background-blend-mode: saturation;
-    background-color: rgba(248, 248, 248, 0.8);
     background-position: top;
     background-repeat: no-repeat;
     background-size: 45%;

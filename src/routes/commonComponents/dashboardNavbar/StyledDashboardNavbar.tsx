@@ -5,7 +5,6 @@ export const StyledDashboardNavbarContainer = styled(Paper)`
   && {
     width: 20vw;
     height: 100vh;
-    background-color: #b9ffb9;
     display: flex;
     flex-direction: column;
     align-items: center;

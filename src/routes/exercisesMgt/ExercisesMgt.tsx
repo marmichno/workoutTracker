@@ -16,13 +16,7 @@ import { CircularProgress } from '@mui/material';
 import { AddExerciseRow } from './addExerciseRow/AddExerciseRow';
 import { ExerciseFilterRow } from './exerciseFilterRow/ExerciseFilterRow';
 import { ExerciseTableHeader } from './exerciseTableHeader/ExerciseTableHeader';
-
-interface TableRows {
-  name: string;
-  muscleGroup: string;
-  description: string;
-  preview: string;
-}
+import { ExerciseTableBodyData } from './exerciseTableBodyData/ExerciseTableBodyData';
 
 export const ExercisesMgt = () => {
   const dispatch: any = useDispatch();
@@ -45,9 +39,12 @@ export const ExercisesMgt = () => {
           <AddExerciseRow />
           <ExerciseFilterRow />
           <StyledExerciseTableContainer>
-            <StyledExerciseTable>
+            <StyledExerciseTable stickyHeader>
               {exercises.response.length > 0 && (
-                <ExerciseTableHeader tableRows={exercises.response} />
+                <>
+                  <ExerciseTableHeader tableRows={exercises.response} />
+                  <ExerciseTableBodyData tableRows={exercises.response} />
+                </>
               )}
             </StyledExerciseTable>
           </StyledExerciseTableContainer>

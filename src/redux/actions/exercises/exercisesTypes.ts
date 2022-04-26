@@ -4,10 +4,12 @@ export const FETCH_EXERCISES_FAILURE = 'FETCH_EXERCISES_FAILURE';
 
 export interface Exercises {
     _id: string,
+    createdBy: string,
     name: string;
   muscleGroup: string;
   description: string;
   preview: string;
+  __v: string
 }
 
 interface ExercisesAsync {
