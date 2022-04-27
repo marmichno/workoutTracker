@@ -15,6 +15,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 // components
 import { DeleteExercisePopup } from './deleteExercisePopup/DeleteExercisePopup';
+import { ModifyExercisePopup } from './modifyExercisePopup/ModifyExercisePopup';
 
 interface TableRows {
   _id: string;
@@ -73,6 +74,7 @@ export const ExerciseTableBodyData = ({
           );
         })}
         {managementState.popupDelete.open && <DeleteExercisePopup />}
+        {managementState.popupModify.open && <ModifyExercisePopup />}
       </TableBody>
     </>
   );
