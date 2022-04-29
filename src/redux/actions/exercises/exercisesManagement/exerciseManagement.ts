@@ -5,8 +5,8 @@ import {
   EXERCISES_ADDNEW_POPUP,
   EXERCISES_DELETE_POPUP,
   EXERCISES_MODIFY_POPUP,
-} from './exerciseManagementTypes';
-import { ExercisesManagementActionTypes } from './exerciseManagementTypes';
+} from "./exerciseManagementTypes";
+import { ExercisesManagementActionTypes } from "./exerciseManagementTypes";
 
 export const filterExercisesName = (
   name: string
@@ -14,21 +14,21 @@ export const filterExercisesName = (
   return {
     type: FILTER_EXERCISES_NAME,
     name: name,
-    musclegroup: '',
-    exerciseType: '',
+    musclegroup: "",
+    exerciseType: "",
     popupOpen: false,
     popupDelete: {
       open: false,
-      id: '',
-      name: '',
+      id: "",
+      name: "",
     },
     popupModify: {
       open: false,
-      id: '',
-      name: '',
-      muscleGroup: '',
-      description: '',
-      preview: '',
+      id: "",
+      name: "",
+      muscleGroup: "",
+      description: "",
+      preview: "",
     },
   };
 };
@@ -38,22 +38,22 @@ export const filterExercisesMusclegroup = (
 ): ExercisesManagementActionTypes => {
   return {
     type: FILTER_EXERCISES_MUSCLEGROUP,
-    name: '',
+    name: "",
     musclegroup: musclegroup,
-    exerciseType: '',
+    exerciseType: "",
     popupOpen: false,
     popupDelete: {
       open: false,
-      id: '',
-      name: '',
+      id: "",
+      name: "",
     },
     popupModify: {
       open: false,
-      id: '',
-      name: '',
-      muscleGroup: '',
-      description: '',
-      preview: '',
+      id: "",
+      name: "",
+      muscleGroup: "",
+      description: "",
+      preview: "",
     },
   };
 };
@@ -63,22 +63,22 @@ export const filterExercisesType = (
 ): ExercisesManagementActionTypes => {
   return {
     type: FILTER_EXERCISES_TYPE,
-    name: '',
-    musclegroup: '',
+    name: "",
+    musclegroup: "",
     exerciseType: exerciseType,
     popupOpen: false,
     popupDelete: {
       open: false,
-      id: '',
-      name: '',
+      id: "",
+      name: "",
     },
     popupModify: {
       open: false,
-      id: '',
-      name: '',
-      muscleGroup: '',
-      description: '',
-      preview: '',
+      id: "",
+      name: "",
+      muscleGroup: "",
+      description: "",
+      preview: "",
     },
   };
 };
@@ -88,22 +88,22 @@ export const exercisesAddnewPopup = (
 ): ExercisesManagementActionTypes => {
   return {
     type: EXERCISES_ADDNEW_POPUP,
-    name: '',
-    musclegroup: '',
-    exerciseType: '',
+    name: "",
+    musclegroup: "",
+    exerciseType: "",
     popupOpen: showAddnewPopup,
     popupDelete: {
       open: false,
-      id: '',
-      name: '',
+      id: "",
+      name: "",
     },
     popupModify: {
       open: false,
-      id: '',
-      name: '',
-      muscleGroup: '',
-      description: '',
-      preview: '',
+      id: "",
+      name: "",
+      muscleGroup: "",
+      description: "",
+      preview: "",
     },
   };
 };
@@ -115,22 +115,22 @@ export const exercisesDeletePopup = (
 ): ExercisesManagementActionTypes => {
   return {
     type: EXERCISES_DELETE_POPUP,
-    name: '',
-    musclegroup: '',
-    exerciseType: '',
+    name: "",
+    musclegroup: "",
+    exerciseType: "",
     popupOpen: false,
     popupDelete: {
       open: showDeletePopup,
-      id: id ? id : '',
-      name: name ? name : '',
+      id: id ? id : "",
+      name: name ? name : "",
     },
     popupModify: {
       open: false,
-      id: '',
-      name: '',
-      muscleGroup: '',
-      description: '',
-      preview: '',
+      id: "",
+      name: "",
+      muscleGroup: "",
+      description: "",
+      preview: "",
     },
   };
 };
@@ -145,22 +145,22 @@ export const exercisesModifyPopup = (
 ): ExercisesManagementActionTypes => {
   return {
     type: EXERCISES_MODIFY_POPUP,
-    name: '',
-    musclegroup: '',
-    exerciseType: '',
+    name: "",
+    musclegroup: "",
+    exerciseType: "",
     popupOpen: false,
     popupDelete: {
       open: false,
-      id: '',
-      name: '',
+      id: "",
+      name: "",
     },
     popupModify: {
       open: showModifyPopup,
-      id: id ? id : '',
-      name: '',
-      muscleGroup: '',
-      description: '',
-      preview: '',
+      id: id ? id : "",
+      name: name ? name : "",
+      muscleGroup: muscleGroup ? muscleGroup : "",
+      description: description ? description : "",
+      preview: preview ? preview : "",
     },
   };
 };

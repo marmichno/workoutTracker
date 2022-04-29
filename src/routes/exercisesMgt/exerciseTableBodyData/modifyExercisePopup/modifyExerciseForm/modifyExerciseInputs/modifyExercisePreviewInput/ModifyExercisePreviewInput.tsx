@@ -2,29 +2,35 @@
 import { TextField } from "@mui/material";
 // react-hook-form
 import { useFormContext, Controller } from "react-hook-form";
+// redux
+import { useAppSelector } from "../../../../../../../hooks/hooks";
 
-export const AddExerciseNameInput = () => {
+export const ModifyExercisePreviewInput = () => {
   const {
     control,
     formState: { errors },
   } = useFormContext();
 
+  const inputState = useAppSelector(
+    (state) => state.exercisesManagement.popupModify
+  );
+
   return (
     <Controller
-      name="name"
-      defaultValue=""
+      name="preview"
+      defaultValue={inputState.preview}
       control={control}
       render={({ field }) => (
         <TextField
           inputProps={{ autoComplete: "off" }}
           {...field}
-          name="name"
+          name="preview"
           type="text"
           variant="outlined"
-          label="name"
+          label="preview"
           fullWidth
-          error={!!errors.name}
-          helperText={errors.name ? errors.name?.message : ""}
+          error={!!errors.preview}
+          helperText={errors.preview ? errors.preview?.message : ""}
         ></TextField>
       )}
     ></Controller>

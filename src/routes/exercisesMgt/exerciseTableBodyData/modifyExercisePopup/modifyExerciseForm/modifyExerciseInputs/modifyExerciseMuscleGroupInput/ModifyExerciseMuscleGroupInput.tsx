@@ -2,29 +2,35 @@
 import { TextField } from "@mui/material";
 // react-hook-form
 import { useFormContext, Controller } from "react-hook-form";
+// redux
+import { useAppSelector } from "../../../../../../../hooks/hooks";
 
-export const AddExerciseNameInput = () => {
+export const ModifyExerciseMuscleGroupInput = () => {
   const {
     control,
     formState: { errors },
   } = useFormContext();
 
+  const inputState = useAppSelector(
+    (state) => state.exercisesManagement.popupModify
+  );
+
   return (
     <Controller
-      name="name"
-      defaultValue=""
+      name="muscleGroup"
+      defaultValue={inputState.muscleGroup}
       control={control}
       render={({ field }) => (
         <TextField
           inputProps={{ autoComplete: "off" }}
           {...field}
-          name="name"
+          name="muscleGroup"
           type="text"
           variant="outlined"
-          label="name"
+          label="muscle group"
           fullWidth
-          error={!!errors.name}
-          helperText={errors.name ? errors.name?.message : ""}
+          error={!!errors.muscleGroup}
+          helperText={errors.muscleGroup ? errors.muscleGroup?.message : ""}
         ></TextField>
       )}
     ></Controller>

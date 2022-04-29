@@ -1,7 +1,7 @@
 // mui
-import { TextField } from '@mui/material';
+import { TextField } from "@mui/material";
 // react-hook-form
-import { useFormContext, Controller } from 'react-hook-form';
+import { useFormContext, Controller } from "react-hook-form";
 
 export const AddExercisePreviewInput = () => {
   const {
@@ -16,15 +16,15 @@ export const AddExercisePreviewInput = () => {
       control={control}
       render={({ field }) => (
         <TextField
-          inputProps={{ autoComplete: 'off' }}
+          inputProps={{ autoComplete: "off" }}
           {...field}
           name="preview"
           type="text"
           variant="outlined"
           label="preview"
           fullWidth
-          error={!!errors.description}
-          helperText={errors.preview ? errors.preview?.message : ''}
+          error={!!errors.preview}
+          helperText={errors.preview ? errors.preview?.message : ""}
         ></TextField>
       )}
     ></Controller>

@@ -5,19 +5,22 @@ import {
   StyledModifyExerciseFormWrapper,
   StyledModifyExerciseInputWrapper,
   StyledModifyFormWrapper,
-} from './StyledModifyExerciseForm';
+} from "./StyledModifyExerciseForm";
 // mui
-import { Button } from '@mui/material';
+import { Button } from "@mui/material";
 // react-hook-form
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm, SubmitHandler, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 // redux
-import { useDispatch } from 'react-redux';
-import { exercisesModifyPopup } from '../../../../../redux/actions/exercises/exercisesManagement/exerciseManagement';
-import { fetchExercises } from '../../../../../redux/actions/exercises/exercisesActions';
+import { useDispatch } from "react-redux";
+import { exercisesModifyPopup } from "../../../../../redux/actions/exercises/exercisesManagement/exerciseManagement";
 // inputs
+import { ModifyExerciseDescriptionInput } from "./modifyExerciseInputs/modifyExerciseDescriptionInput/ModifyExerciseDescriptionInput";
+import { ModifyExerciseMuscleGroupInput } from "./modifyExerciseInputs/modifyExerciseMuscleGroupInput/ModifyExerciseMuscleGroupInput";
+import { ModifyExerciseNameInput } from "./modifyExerciseInputs/modifyExerciseNameInput/ModifyExerciseNameInput";
+import { ModifyExercisePreviewInput } from "./modifyExerciseInputs/modifyExercisePreviewInput/ModifyExercisePreviewInput";
 // icons
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 // validationSchema
 // requests
 
@@ -43,7 +46,7 @@ export const ModifyExerciseForm = () => {
       <StyledModifyExerciseCloseWrapper>
         <CloseIcon
           onClick={() =>
-            dispatch(exercisesModifyPopup(false, '', '', '', '', ''))
+            dispatch(exercisesModifyPopup(false, "", "", "", "", ""))
           }
         />
       </StyledModifyExerciseCloseWrapper>
@@ -56,16 +59,16 @@ export const ModifyExerciseForm = () => {
               autoComplete="off"
             >
               <StyledModifyExerciseInputWrapper>
-                {/* <AddExerciseNameInput /> */}
+                <ModifyExerciseNameInput />
               </StyledModifyExerciseInputWrapper>
               <StyledModifyExerciseInputWrapper>
-                {/* <AddExerciseMuscleGroupInput /> */}
+                <ModifyExerciseMuscleGroupInput />
               </StyledModifyExerciseInputWrapper>
               <StyledModifyExerciseInputWrapper>
-                {/* <AddExerciseDescriptionInput /> */}
+                <ModifyExerciseDescriptionInput />
               </StyledModifyExerciseInputWrapper>
               <StyledModifyExerciseInputWrapper>
-                {/* <AddExercisePreviewInput /> */}
+                <ModifyExercisePreviewInput />
               </StyledModifyExerciseInputWrapper>
               <Button type="submit" variant="contained">
                 modify exercise
